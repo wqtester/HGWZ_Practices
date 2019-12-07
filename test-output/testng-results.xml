@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="LoginTest" duration-ms="102" started-at="2019-11-20T11:40:14 CST" finished-at="2019-11-20T11:40:14 CST">
+    <groups>
+    </groups>
+    <test name="All Test Suite" duration-ms="102" started-at="2019-11-20T11:40:14 CST" finished-at="2019-11-20T11:40:14 CST">
+      <class name="XunitTest.LoginTest">
+        <test-method status="PASS" signature="testUserLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:XunitTest.LoginTest@4232c52b]" name="testUserLogin" duration-ms="20" started-at="2019-11-20T11:40:14 CST" data-provider="dataProvider" finished-at="2019-11-20T11:40:14 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[用户名或密码不能为空]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUserLogin -->
+        <test-method status="PASS" signature="testUserLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:XunitTest.LoginTest@4232c52b]" name="testUserLogin" duration-ms="0" started-at="2019-11-20T11:40:14 CST" data-provider="dataProvider" finished-at="2019-11-20T11:40:14 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[用户名或密码不能为空]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUserLogin -->
+        <test-method status="PASS" signature="testUserLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:XunitTest.LoginTest@4232c52b]" name="testUserLogin" duration-ms="0" started-at="2019-11-20T11:40:14 CST" data-provider="dataProvider" finished-at="2019-11-20T11:40:14 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[用户名或密码不能为空]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUserLogin -->
+        <test-method status="PASS" signature="testUserLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:XunitTest.LoginTest@4232c52b]" name="testUserLogin" duration-ms="0" started-at="2019-11-20T11:40:14 CST" data-provider="dataProvider" finished-at="2019-11-20T11:40:14 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[欢迎管理员]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUserLogin -->
+        <test-method status="PASS" signature="testUserLogin(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:XunitTest.LoginTest@4232c52b]" name="testUserLogin" duration-ms="0" started-at="2019-11-20T11:40:14 CST" data-provider="dataProvider" finished-at="2019-11-20T11:40:14 CST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[欢迎user]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUserLogin -->
+      </class> <!-- XunitTest.LoginTest -->
+    </test> <!-- All Test Suite -->
+  </suite> <!-- LoginTest -->
+</testng-results>
