@@ -8,33 +8,33 @@ public class TestJunit4DemoChildren extends TestJUnit4Demo{
 
     @BeforeClass
     public static void beforeAllTestCaseChildren(){
-        System.out.println("TestJunit4DemoChildren beforeAllTestCase");
+        System.out.println("Children beforeAllTestCase");
     }
 
     @AfterClass
     public static void afterAllTestCaseChildren(){
-        System.out.println("TestJunit4DemoChildren afterAllTestCase");
+        System.out.println("Children afterAllTestCase");
     }
 
     @Before
     public void beforeTestCaseChildren(){
-        System.out.println("TestJunit4DemoChildren beforeTestCase");
+        System.out.println("Children beforeTestCase");
     }
 
     @After
     public void afterTestCaseChildren(){
-        System.out.println("TestJunit4DemoChildren afterTestCase");
+        System.out.println("Children afterTestCase");
     }
 
     @Test
     public void testDemo1Children(){
-        System.out.println("TestJunit4DemoChildren testDemo1");
+        System.out.println("Children testDemo1");
         // assertTrue(true);
     }
 
     @Test
     public void testDemo3Children(){
-        System.out.println("TestJunit4DemoChildren testDemo3");
+        System.out.println("Children testDemo3");
         //assertTrue(false);
     }
 
