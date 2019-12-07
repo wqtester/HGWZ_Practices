@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="LoginTest" verbose="1" >
+    <test name = "All Test Suite" >
+        <classes>
+            <class name="XunitTest.LoginTest" >
+                <methods><!--
+                    <parameter name="name" value="测试"></parameter>
+                    <parameter name="pwd" value="123456"></parameter>
+                    <parameter name="expect" value="欢迎测试"></parameter>-->
+                    <include name = "testUserLogin" ></include>
+<!--                    <include name = "testUserLogin1" ></include>
+                    <include name = "testUserLogin2" ></include>
+                    <include name = "testUserLogin3" ></include>-->
+                </methods>
+             </class>
+         </classes>
+    </test>
+</suite>
