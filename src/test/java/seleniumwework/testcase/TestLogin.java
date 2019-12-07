@@ -1,4 +1,4 @@
-package selenium.testcase;
+package seleniumwework.testcase;
 
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
