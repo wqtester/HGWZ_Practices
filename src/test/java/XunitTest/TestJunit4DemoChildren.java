@@ -7,39 +7,39 @@ import org.junit.runners.MethodSorters;
 public class TestJunit4DemoChildren extends TestJUnit4Demo{
 
     @BeforeClass
-    public static void beforeAllTestCase(){
+    public static void beforeAllTestCaseChildren(){
         System.out.println("TestJunit4DemoChildren beforeAllTestCase");
     }
 
     @AfterClass
-    public static void afterAllTestCase(){
+    public static void afterAllTestCaseChildren(){
         System.out.println("TestJunit4DemoChildren afterAllTestCase");
     }
 
     @Before
-    public void beforeTestCase(){
+    public void beforeTestCaseChildren(){
         System.out.println("TestJunit4DemoChildren beforeTestCase");
     }
 
     @After
-    public void afterTestCase(){
+    public void afterTestCaseChildren(){
         System.out.println("TestJunit4DemoChildren afterTestCase");
     }
 
     @Test
-    public void testDemo1(){
+    public void testDemo1Children(){
         System.out.println("TestJunit4DemoChildren testDemo1");
         // assertTrue(true);
     }
 
     @Test
-    public void testDemo3(){
+    public void testDemo3Children(){
         System.out.println("TestJunit4DemoChildren testDemo3");
         //assertTrue(false);
     }
 
     @Test
-    public void testDemo2(){
+    public void testDemo2Children(){
         System.out.println("TestJunit4DemoChildren testDemo2");
     }
 
