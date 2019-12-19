@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.experimental.categories.Category;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.Matchers.anyOf;
 import static org.hamcrest.Matchers.closeTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
@@ -24,16 +25,17 @@ public class TestGroups {
     public void testDemo2(){
         //assertThat("actual value equalTo 10","10",equalTo("100")); //不加双引号时执行结果是尖括号括起来的，表明是数字（idea提供的功能）；加双引号则为字符串
 
-/*        assertThat("actual value closeTo 10",3.14, //这里需要是double类型的小数，不然后面closeTo会报错
+        assertThat("actual value closeTo 3.14",3.14, //这里需要是double类型的小数，不然后面closeTo会报错
                 closeTo(2,0.3)); //意思是范围在1.7~2.3之间，3.14不在这个范围所以执行不通过
-       */
-        assertTrue(false);
+        //assertTrue(false);
     }
 
     @Category(SlowGroup.class)
     @Test
     public void testDemo3(){
-        assertTrue(false);
+        assertThat("actual value anyOf 10",9.88,  //不在anyOf那个范围内就可以匹配equalTo的值，anyOf - matches if any matchers match, short circuits (like Java ||)
+                anyOf(closeTo(10,0.1),equalTo(9.88)));
+        //assertTrue(false);
     }
 
     @Category(FastGroup.class)
