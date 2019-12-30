@@ -1,10 +1,16 @@
 package interfacewework;
 
+/**
+ * 先写TestDemo1，在把这部分第一步获取token放到java-wwconfig-Config里，再把Config里的getInstance生成单测wwconfig-ConfigTest
+ *
+ */
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 import wwconfig.Config;
+
+import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
@@ -33,7 +39,22 @@ public class TestDemo1 {
     }*/
 
     @Test
-    void post(){
+    void sendMessage(){
+
+        HashMap<String,Object> data = new HashMap<String, Object>();
+        data.put("touser","@all");
+        data.put("toparty","");
+        data.put("totag","");
+        data.put("msgtype","text");
+        data.put("agentid",Config.getInstance().agentid);
+        data.put("safe","0");
+        data.put("enable_id_trans","0");
+        data.put("data.put(\"safe\",\"0\");","0");
+
+        //data.put("text",new HashMap<String,Object>());text里是一个新的HashMap content，里面要塞值的
+        HashMap<String,Object> content=new HashMap<String,Object>();
+        content.put("content","自动化测试：欢迎测试~\\n不懂的可查看<a href=\\\"http://www.baidu.com\\\">百度</a>，自己解决问题。");
+        data.put("text",content);
         //useRelaxedHTTPSValidation(); 走代理抓包时用
         given().
                 log().all().
@@ -49,7 +70,7 @@ public class TestDemo1 {
                         "\"text\" : {\n" +
                         "\"content\" : \"自动化测试：你的快递已到，请携带工卡前往邮件中心领取。\\n出发前可查看<a href=\\\"http://work.weixin.qq.com\\\">邮件中心视频实况</a>，聪明避开排队。\"\n" +
                         "        },\n" +
-                        "\"safe\":0,,\n" +
+                        "\"safe\":0,\n" +
                         " \"enable_id_trans\": 0,\n" +
                         "\"enable_duplicate_check\": 0,\n" +
                     "},\n").
