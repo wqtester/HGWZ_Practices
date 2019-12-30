@@ -16,6 +16,7 @@ import wwconfig.Message;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.io.StringWriter;
 import java.io.Writer;
 import java.util.HashMap;
 
@@ -119,16 +120,26 @@ public class TestDemo1 {
 
 
     //https://github.com/spullara/mustache.java模板解析工具,实现数据与模板绑定
-    @Test
+/*    @Test
     void template() throws IOException {
-        Writer writer = new OutputStreamWriter(System.out);
+        //Writer writer = new OutputStreamWriter(System.out);
+        Writer writer = new StringWriter();
 
         HashMap<String,Object> data=new HashMap<String, Object>();
         data.put("to","@all");
         data.put("msg","xxxxx");
 
         new DefaultMustacheFactory().compile("wwdata/wwmessage.json").execute(writer,data);
-        writer.flush();
-    }
+        //writer.flush();
+        System.out.println(writer.toString());
+    }*/
 
+    @ParameterizedTest
+    @ValueSource(strings = { " ", "测试中文", "welcome to wework" ,"企業へようこそ微信",
+            "自动化测试：欢迎测试~ \n不懂的可查看 <a href=\"http://www.baidu.com\">百度</a>，自己解决问题。"})
+    void sendMessage3(String msg){
+
+        Message message=new Message();
+        message.send("@all",msg,Config.getInstance().agentid).then().body("errcode",equalTo(0));
+    }
 }
