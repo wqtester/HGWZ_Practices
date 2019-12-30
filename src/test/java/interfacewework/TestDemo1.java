@@ -4,6 +4,7 @@ package interfacewework;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
+import wwconfig.Config;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
@@ -16,7 +17,7 @@ public class TestDemo1 {
     void demo(){
         assertTrue(false);
     }
-
+/* //写在wwconfig里的Config了，为了动态获取token
     @Test
     void getToken(){
         given().
@@ -29,7 +30,7 @@ public class TestDemo1 {
                 log().all().
                 statusCode(200).
                 body(containsString("ok"));
-    }
+    }*/
 
     @Test
     void post(){
@@ -37,7 +38,7 @@ public class TestDemo1 {
         given().
                 log().all().
                 //proxy(8080). 可以走代理抓包
-                queryParam("access_token", "1TUNmjyf5w-pFOMvByLuHKeRmfsrP8c4NNzAUa9h9SZ8PBIcDTq8cS8IUVu7KTKMXc-mevm6Z3itzwYYJlZE3-z8ZuZ0Lsf9IgfAo3uHJ1nQAHz7IwBSJ5ATNoex9MyIlT7Z7x0PfqJRiBTISaU3WIB-dvULfDyIIeEWJ8n3TAkAsd6AMZkXok5p15HmP9D-ADotVKN0d_AVzr2KiNsqCQ").
+                queryParam("access_token", Config.getInstance().token).
                 contentType(ContentType.JSON).
                 body("{\n"+
                         "\"touser\" : \"@all\",\n"+

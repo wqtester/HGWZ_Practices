@@ -29,7 +29,7 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>4.1.2</version>
-            <scope>test</scope>
+        <!--    <scope>test</scope>  去掉这个，restassured就可以不只能在test中引-->
         </dependency>
 
         <dependency>
