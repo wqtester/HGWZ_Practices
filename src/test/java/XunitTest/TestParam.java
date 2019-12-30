@@ -7,7 +7,6 @@ import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collection;
-
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
@@ -39,6 +38,6 @@ public class TestParam {
     public void testDemo(){
 //        int actual = 10;
 //        int expection =9; //实际是从外面传值，再作断言
-        assertThat("demo",actual,equalTo(expection));
+          assertThat("demo",actual,equalTo(expection));
     }
 }

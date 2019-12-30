@@ -7,7 +7,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(JUnitParamsRunner.class)

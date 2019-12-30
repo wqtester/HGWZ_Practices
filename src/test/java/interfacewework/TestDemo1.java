@@ -8,6 +8,8 @@ package interfacewework;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import wwconfig.Config;
 
 import java.util.HashMap;
@@ -38,8 +40,10 @@ public class TestDemo1 {
                 body(containsString("ok"));
     }*/
 
-    @Test
-    void sendMessage(){
+    @ParameterizedTest
+    @ValueSource(strings = { " ", "测试中文", "welcome to wework" ,"企業へようこそ微信",
+            "自动化测试：欢迎测试~ \n不懂的可查看 <a href=\"http://www.baidu.com\">百度</a>，自己解决问题。"})
+    void sendMessage(String msg){
 
         HashMap<String,Object> data = new HashMap<String, Object>();
         data.put("touser","@all");
@@ -53,7 +57,8 @@ public class TestDemo1 {
 
         //data.put("text",new HashMap<String,Object>());text里是一个新的HashMap content，里面要塞值的
         HashMap<String,Object> content=new HashMap<String,Object>();
-        content.put("content","自动化测试：欢迎测试~ \\n不懂的可查看 <a href=\\\"http://www.baidu.com\\\">百度</a>，自己解决问题。");
+        content.put("content",msg);
+        //content.put("content","自动化测试：欢迎测试~ \\n不懂的可查看 <a href=\\\"http://www.baidu.com\\\">百度</a>，自己解决问题。");
         data.put("text",content);
         //useRelaxedHTTPSValidation(); 走代理抓包时用
         given().
