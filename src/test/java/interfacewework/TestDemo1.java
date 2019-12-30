@@ -143,3 +143,5 @@ public class TestDemo1 {
         message.send("@all",msg,Config.getInstance().agentid).then().body("errcode",equalTo(0));
     }
 }
+
+//从0-3sendMessage用例升级重构简化
