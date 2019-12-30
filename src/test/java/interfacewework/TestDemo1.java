@@ -5,17 +5,23 @@ package interfacewework;
  *
  */
 
+import com.github.mustachejava.DefaultMustacheFactory;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import wwconfig.Config;
+import wwconfig.Message;
 
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -53,7 +59,7 @@ public class TestDemo1 {
         data.put("agentid",Config.getInstance().agentid);
         data.put("safe","0");
         data.put("enable_id_trans","0");
-        data.put("data.put(\"safe\",\"0\");","0");
+        data.put("safe","0");
 
         //data.put("text",new HashMap<String,Object>());text里是一个新的HashMap content，里面要塞值的
         HashMap<String,Object> content=new HashMap<String,Object>();
@@ -86,4 +92,43 @@ public class TestDemo1 {
                 statusCode(200).
                 body(containsString("ok"));
     }
+
+
+    @Test
+    @ParameterizedTest
+    @ValueSource(strings = { " ", "测试中文", "welcome to wework" ,"企業へようこそ微信",
+            "自动化测试：欢迎测试~ \n不懂的可查看 <a href=\"http://www.baidu.com\">百度</a>，自己解决问题。"})
+    void sendMessage2(String msg){
+
+        HashMap<String,Object> data = new HashMap<String, Object>();
+        data.put("touser","@all");
+        data.put("toparty","");
+        data.put("totag","");
+        data.put("msgtype","text");
+        data.put("agentid",Config.getInstance().agentid);
+        data.put("safe","0");
+        data.put("enable_id_trans","0");
+        data.put("safe","0");
+
+        HashMap<String,Object> content=new HashMap<String,Object>();
+        content.put("content",msg);
+        data.put("text",content);
+        Message message=new Message();
+        message.send(data).then().body("errcode",equalTo(0));
+    }
+
+
+    //https://github.com/spullara/mustache.java模板解析工具,实现数据与模板绑定
+    @Test
+    void template() throws IOException {
+        Writer writer = new OutputStreamWriter(System.out);
+
+        HashMap<String,Object> data=new HashMap<String, Object>();
+        data.put("to","@all");
+        data.put("msg","xxxxx");
+
+        new DefaultMustacheFactory().compile("wwdata/wwmessage.json").execute(writer,data);
+        writer.flush();
+    }
+
 }

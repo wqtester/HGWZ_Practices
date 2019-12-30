@@ -8,7 +8,7 @@
     <artifactId>com.wework.test</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <build>
+<!--    <build>
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -19,7 +19,7 @@
                 <version>2.22.2</version>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
@@ -34,6 +34,12 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
+            <version>5.5.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
             <version>5.5.2</version>
             <scope>test</scope>
         </dependency>
@@ -87,9 +93,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>5.0.0-M4</version>
+            <groupId>com.github.spullara.mustache.java</groupId>
+            <artifactId>compiler</artifactId>
+            <version>0.9.4</version>
             <scope>test</scope>
         </dependency>
 
