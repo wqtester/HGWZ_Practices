@@ -32,6 +32,13 @@
         <!--    <scope>test</scope>  去掉这个，restassured就可以不只能在test中引-->
         </dependency>
 
+        <!--json数据格式转换-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.9</version>
+        </dependency>
+
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>

@@ -53,7 +53,7 @@ public class TestDemo1 {
 
         //data.put("text",new HashMap<String,Object>());text里是一个新的HashMap content，里面要塞值的
         HashMap<String,Object> content=new HashMap<String,Object>();
-        content.put("content","自动化测试：欢迎测试~\\n不懂的可查看<a href=\\\"http://www.baidu.com\\\">百度</a>，自己解决问题。");
+        content.put("content","自动化测试：欢迎测试~\\n不懂的可查看 <a href=\\\"http://www.baidu.com\\\">百度</a>，自己解决问题。");
         data.put("text",content);
         //useRelaxedHTTPSValidation(); 走代理抓包时用
         given().
@@ -61,7 +61,8 @@ public class TestDemo1 {
                 //proxy(8080). 可以走代理抓包
                 queryParam("access_token", Config.getInstance().token).
                 contentType(ContentType.JSON).
-                body("{\n"+
+                body(data).
+/*                body("{\n"+
                         "\"touser\" : \"@all\",\n"+
                         "\"toparty\" : \"\",\n" +
                         "\"totag\" : \"\",\n" +
@@ -73,7 +74,7 @@ public class TestDemo1 {
                         "\"safe\":0,\n" +
                         " \"enable_id_trans\": 0,\n" +
                         "\"enable_duplicate_check\": 0,\n" +
-                    "},\n").
+                    "},\n").*/
                 when().
                 post("https://qyapi.weixin.qq.com/cgi-bin/message/send").
                 then().log().all().
